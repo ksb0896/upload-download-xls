@@ -28,7 +28,7 @@ public class ExcelHelper {
 
     public static String TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"; //allowed file during upload
     static String[] HEADERs = { "Id", "Title", "Description", "Published" }; //columns name
-    static String SHEET = "XLS"; //excel sheet name
+    static String SHEET = "Store"; //excel sheet name
 
     //to check weather the file is in 'xls' format
     public static boolean hasExcelFormat(MultipartFile file){

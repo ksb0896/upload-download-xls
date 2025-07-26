@@ -63,11 +63,11 @@ public class ExcelController {
     //download excel file
     @GetMapping("/download")
     public ResponseEntity<Resource> getFile(){
-        String fileName = "ExcelFile.xlsx";
+        String filename = "Excel.xlsx";
         InputStreamResource file = new InputStreamResource(fileService.load());
 
         return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName)
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
                 .contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
                 .body(file);
     }
