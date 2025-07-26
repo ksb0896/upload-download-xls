@@ -7,6 +7,30 @@ mvn spring-boot:run
 ```
 # Getting Started
 
+### What I did
+Created an API where you can upload an excel file/s
+
+### How I did
+* Uploading Excel File to the Spring Server & storing data in MySQL Database. (/api/v1/excel/upload)
+* Getting list of items from MySQL table. (/api/v1/excel/getAllExcelFiles)
+* Downloading MySQL table data as Excel file. (/api/v1/excel/download)
+
+### Technology used
+* Java 8
+* Spring Boot(with Spring Web MVC)
+* Maven
+* Apache POI 5.4.0
+
+### Purposes of the files
+* ExcelHelper provides functions to read Excel file.
+* xls data model class corresponds to entity and table Excel.
+* xlsRepo is an interface that extends JpaRepository for persisting data.
+* ExcelService uses ExcelHelper and xlsRepo methods to save Excel data to MySQL, load data to Excel file, or get all Excel from MySQL table.
+* ExcelController calls ExcelService methods and export Rest APIs: upload Excel file, get data from MySQL database.
+* FileUploadExceptionAdvice handles exception when the controller processes file upload.
+* application.properties contains configuration for Spring Data and Servlet Multipart file.
+* pom.xml for Spring Boot, MySQL connector, Apache POI dependencies.
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
