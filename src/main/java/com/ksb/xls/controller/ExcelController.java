@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:8086")
+@CrossOrigin("http://localhost:8080")
 @Controller
 @RequestMapping("/api/v1/excel")
 public class ExcelController {
@@ -63,7 +63,7 @@ public class ExcelController {
     //download excel file
     @GetMapping("/download")
     public ResponseEntity<Resource> getFile(){
-        String filename = "Excel.xlsx";
+        String filename = "excel.xlsx";
         InputStreamResource file = new InputStreamResource(fileService.load());
 
         return ResponseEntity.ok()
